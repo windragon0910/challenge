@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Hello, World!</title>
+    <style>
+        body {
+            background-color: #20232A;
+            color: #61dafb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        #animation-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .animated-letter {
+            animation: bounce 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="animation-container">
+        <h1>
+            <span class="animated-letter">H</span>
+            <span class="animated-letter">e</span>
+            <span class="animated-letter">l</span>
+            <span class="animated-letter">l</span>
+            <span class="animated-letter">o</span>
+            <span class="animated-letter">,</span>
+            <span class="animated-letter">&nbsp;</span>
+            <span class="animated-letter">W</span>
+            <span class="animated-letter">o</span>
+            <span class="animated-letter">r</span>
+            <span class="animated-letter">l</span>
+            <span class="animated-letter">d</span>
+            <span class="animated-letter">!</span>
+        </h1>
+    </div>
+
+    <script>
+        const letters = document.querySelectorAll('.animated-letter');
+        let delay = 0;
+
+        letters.forEach((letter) => {
+            letter.style.animationDelay = `${delay}s`;
+            delay += 0.2;
+        });
+    </script>
+</body>
+</html>
