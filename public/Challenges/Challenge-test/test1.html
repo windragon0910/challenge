@@ -12,8 +12,8 @@
   <div id="countdown"></div>
 
   <script>
-    const startTime = new Date('2023-11-08T00:00:00Z').getTime(); // Start time in milliseconds (GMT+0)
-    const endTime = new Date('2023-11-25T00:00:00Z').getTime(); // End time in milliseconds (GMT+0)
+    const startTime = new Date('2023-11-09T00:00:00Z').getTime(); // Start time in milliseconds (GMT+0)
+    const endTime = new Date('2023-11-09T12:00:00Z').getTime(); // End time in milliseconds (GMT+0)
 
     const countdown = document.getElementById('countdown');
 
@@ -22,20 +22,18 @@
 
       if (now < startTime) {
         const timeRemaining = startTime - now;
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        countdown.innerHTML = `Time until Start: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        countdown.innerHTML = `Time until Start: ${hours}h ${minutes}m ${seconds}s`;
       } else if (now < endTime) {
         const timeRemaining = endTime - now;
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        countdown.innerHTML = `Time until End: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        countdown.innerHTML = `Time until End: ${hours}h ${minutes}m ${seconds}s`;
       } else {
         countdown.innerHTML = "Countdown completed!";
       }
