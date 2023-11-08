@@ -12,13 +12,13 @@
   <div id="countdown"></div>
 
   <script>
-    const startTime = new Date('2023-11-08T00:00:00Z').getTime();
-    const endTime = new Date('2023-11-25T00:00:00Z').getTime();
+    const startTime = new Date('2023-11-08T00:00:00Z').getTime(); // Start time in milliseconds (GMT+0)
+    const endTime = new Date('2023-11-25T00:00:00Z').getTime(); // End time in milliseconds (GMT+0)
 
     const countdown = document.getElementById('countdown');
 
     function updateCountdown() {
-      const now = new Date().getTime();
+      const now = new Date().getTime(); // Current time in milliseconds (GMT+0)
 
       if (now < startTime) {
         const timeRemaining = startTime - now;
