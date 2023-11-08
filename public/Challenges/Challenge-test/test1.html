@@ -12,32 +12,26 @@
   <div id="countdown"></div>
 
   <script>
-    const startTime = new Date('2023-8-11T00:00:00Z').getTime(); // Start time in milliseconds
-    const endTime = new Date('2023-9-11T12:00:00Z').getTime(); // End time in milliseconds
+    const startTime = new Date('2023-11-08T00:00:00Z').getTime();
+    const endTime = new Date('2023-11-25T00:00:00Z').getTime();
 
     const countdown = document.getElementById('countdown');
 
     function updateCountdown() {
-      const now = new Date().getTime(); // Current time in milliseconds
+      const now = new Date().getTime();
 
       if (now < startTime) {
         const timeRemaining = startTime - now;
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        countdown.innerHTML = `Time until Start: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdown.innerHTML = `Time until Start: ${days} days`;
       } else if (now < endTime) {
         const timeRemaining = endTime - now;
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        countdown.innerHTML = `Time until Deadline: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdown.innerHTML = `Time until End: ${days} days`;
       } else {
-        countdown.innerHTML = "Deadline reached!";
+        countdown.innerHTML = "Countdown completed!";
       }
     }
 
