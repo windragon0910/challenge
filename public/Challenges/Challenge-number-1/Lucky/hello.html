@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: rgb(233, 211, 123);
+      color: rgb(12, 37, 223);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-family: 'Arial', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    #animation-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .char {
+      opacity: 0;
+      animation: fadeIn 0.5s linear forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    #animateText {
+      color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="animation-container">
+    <h1 id="animateText"></h1>
+  </div>
+  <script>
+    var text = 'Hello, World!';
+    var displayArea = document.getElementById('animateText');
+    var i = 0;
+
+    var intervalId = setInterval(function () {
+      var span = document.createElement("span");
+      span.textContent = text[i];
+      span.className = "char";
+      span.style.animationDelay = (i * 0.2) + "s";
+      displayArea.appendChild(span);
+
+      i++;
+      if (i == text.length) {
+        clearInterval(intervalId);
+      }
+    }, 200);
+  </script>
+
+</body>
+
+</html>
